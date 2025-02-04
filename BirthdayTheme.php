@@ -72,7 +72,7 @@
 
                 <!-- Item 2 -->
                 <div class="card mx-auto text-center p-3" style="width: 18rem;">
-                    <img src="img/about.jpg" class="card-img-top" alt="...">
+                    <img src="img/flavours/kitcat.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">KitKat Cake</h5>
                         <p class="card-text">Weight available: 500g to 2kg. Custom size available on request.</p>

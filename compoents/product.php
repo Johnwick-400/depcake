@@ -25,8 +25,8 @@
                                 <a href="butterscotch.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Birthday Cake Image"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\Depadya Cake (3) (1).jpg" alt="Birthday Cake Image"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -42,8 +42,8 @@
                                 <a href="Chocolate.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Wedding Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\5 (1).jpg" alt="Wedding Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -59,8 +59,8 @@
                                 <a href="Truffle_chocolate.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Children Special Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\Depadya Cake (2) (1).jpg" alt="Children Special Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -76,8 +76,8 @@
                                 <a href="Honey_almond.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Event Special Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\4 (1).jpg" alt="Event Special Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -93,8 +93,8 @@
                                 <a href="Strawberry.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Cartoon Special Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\straww.jpg" alt="Cartoon Special Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -110,8 +110,8 @@
                                 <a href="Rasmalai.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Wedding Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\rasamalaia.jpg" alt="Wedding Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -128,8 +128,8 @@
                                 <a href="Whitechocolate.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Wedding Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\9 (1).jpg" alt="Wedding Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">
@@ -144,8 +144,8 @@
                                 <a href="Lotusbiscoff.php">
                                     <div class="d-flex flex-column flex-md-row h-100">
                                         <div class="flex-shrink-0">
-                                            <img class="img-fluid" src="img/cake-2.jpg" alt="Wedding Cake"
-                                                style="max-width: 100%; height: auto;">
+                                            <img class="img-fluid" src="img\flavours\8 (1).jpg" alt="Wedding Cake"
+                                                style="max-width: 60%; height: 100%;">
                                         </div>
                                         <div
                                             class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-5 py-4 mt-3 mt-md-0">

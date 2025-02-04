@@ -44,6 +44,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             display: none;
             animation-duration: 1s;
             animation-fill-mode: forwards;
@@ -145,81 +146,158 @@
     <?php include 'compoents/navbar.php'; ?>
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header hero-wrap" id="hero-slider">
-        <div class="slide" style="background-image: url('img/Depcake.jpg');">
-           <!-- <div class="overlay"></div>
-            <div class="content">
-                <h1 class="mb-4">Slide 1: Counseling For Your Better Life</h1>
-                <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p>
-                    <a href="#" class="btn btn-primary">Contact us</a>
-                    <a href="#" class="btn btn-white">Read more</a>
-                </p>
-            </div>-->
-        </div>
-        <div class="slide" style="background-image: url('img/depcake2.jpg');">
-            <!--<div class="overlay"></div>
-            <div class="content">
-                <h1 class="mb-4">Slide 2: Empowering Your Future</h1>
-                <p class="mb-4">Discover the best ways to improve your lifestyle with our expert counseling.</p>
-                <p>
-                    <a href="#" class="btn btn-primary">Join Now</a>
-                    <a href="#" class="btn btn-white">Learn More</a>
-                </p>
-            </div>-->
-        </div>
-        <div class="slide" style="background-image: url('img/depcake3.jpg');">
-           <!-- <div class="overlay"></div>
-            <div class="content">
-                <h1 class="mb-4">Slide 3: Delicious Cakes Await You</h1>
-                <p class="mb-4">Experience the best cakes in town, baked fresh with love and care.</p>
-                <p>
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                    <a href="#" class="btn btn-white">Explore More</a>
-                </p>
-            </div>-->
-        </div>
+    <style>
+    /* Basic Styles */
+    .hero-header {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+    }
 
-        <div class="arrow left" onclick="changeSlide(-1)">
-            <span>&#10094;</span>
-        </div>
-        <div class="arrow right" onclick="changeSlide(1)">
-            <span>&#10095;</span>
-        </div>
-    </div>
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
 
-    <script>
-        const slides = document.querySelectorAll(".slide");
-        let currentSlide = 0;
+    .active {
+        opacity: 1;
+    }
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.style.display = "block";
-                    slide.style.animation = "slideIn 1s forwards";
-                } else if (i === currentSlide) {
-                    slide.style.animation = "slideOut 1s forwards";
-                } else {
-                    slide.style.display = "none";
-                }
-            });
+    /* Navigation Arrows */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        user-select: none;
+        transition: background 0.3s;
+    }
+
+    .arrow:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .left {
+        left: 20px;
+    }
+
+    .right {
+        right: 20px;
+    }
+
+    /* Indicators */
+    .dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .dot.active {
+        background: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-header {
+            height: 300px;
         }
-
-        function changeSlide(direction) {
-            const nextSlide = (currentSlide + direction + slides.length) % slides.length;
-            showSlide(nextSlide);
-            currentSlide = nextSlide;
+        .arrow {
+            font-size: 1.5rem;
+            padding: 5px;
         }
+    }
+</style>
 
-        // Auto-slide every 5 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+<div class="container-fluid bg-primary hero-header hero-wrap" id="hero-slider">
+    <div class="slide active" style="background-image: url('img/Depcake.jpg');"></div>
+    <div class="slide" style="background-image: url('img/depcake2.jpg');"></div>
+    <div class="slide" style="background-image: url('img/depcake3.jpg');"></div>
 
-        // Initialize the first slide
-        showSlide(currentSlide);
-    </script>
-    <!-- Hero End -->
+    <!-- Navigation Arrows -->
+    <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+    <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+
+    <!-- Dots -->
+    <div class="dots"></div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.querySelector(".dots");
+
+    function createDots() {
+        slides.forEach((_, index) => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            dot.addEventListener("click", () => showSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function showSlide(index) {
+        slides[currentSlide].classList.remove("active");
+        document.querySelectorAll(".dot")[currentSlide].classList.remove("active");
+
+        currentSlide = (index + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add("active");
+        document.querySelectorAll(".dot")[currentSlide].classList.add("active");
+    }
+
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+
+    // Auto-slide every 5 seconds
+    let slideInterval = setInterval(() => changeSlide(1), 5000);
+
+    // Pause auto-slide on hover
+    document.getElementById("hero-slider").addEventListener("mouseenter", () => clearInterval(slideInterval));
+    document.getElementById("hero-slider").addEventListener("mouseleave", () => slideInterval = setInterval(() => changeSlide(1), 5000));
+
+    // Swipe support for mobile users
+    let startX = 0;
+    document.getElementById("hero-slider").addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+    document.getElementById("hero-slider").addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX > endX + 50) changeSlide(1);
+        if (startX < endX - 50) changeSlide(-1);
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") changeSlide(-1);
+        if (e.key === "ArrowRight") changeSlide(1);
+    });
+
+    // Initialize
+    createDots();
+    showSlide(currentSlide);
+</script>
 
     <!-- Footer Components -->
     <?php

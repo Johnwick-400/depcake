@@ -49,7 +49,7 @@ include 'db.php';
                          $sql="select images from battercake where id ='$id'";
                          $result = $conn->query($sql);
                          while($row = $result->fetch_assoc()){?>
-                    <img src="img/<?= $row['images']?>" alt="Cake Image" class="img-fluid" width="400px" style="border-radius: 4px;">
+                    <img src="img/flavours/<?= $row['images']?>" alt="Cake Image" class="img-fluid" width="400px" style="border-radius: 4px;">
                     <?php } ?>
                 </div>
                 <!-- Right Side Form -->
@@ -64,7 +64,7 @@ include 'db.php';
                          $result = $conn->query($sql);
                          while($row = $result->fetch_assoc()){?>
                         <div class="mb-3">
-                            <label for="cakeName" class="form-label">Cake Name :</label>
+                            <label for="cakeName" class="form-label">Cake Flavour :</label>
                             <label for="cakeName" class="form-label"><?= $row['cakename']?></label>
 
                         </div><?php } ?>
@@ -73,34 +73,57 @@ include 'db.php';
                             <label class="form-label">Type :</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="type" id="veg" value="Veg">
-                                <label class="form-check-label" for="veg">Veg</label>
+                                <label class="form-check-label" for="veg">Egg Less🟢</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="type" id="nonVeg" value="Non-Veg">
-                                <label class="form-check-label" for="nonVeg">Non-Veg</label>
+                                <label class="form-check-label" for="nonVeg">Egg🔴</label>
                             </div>
                         </div>
                         <!-- Description -->
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Weight :</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select Weight</option>
-                                <option value="1">500 gm</option>
-                                <option value="2">1 kg</option>
-                                <option value="3">1.5kg</option>
-                                <option value="3">2 kg</option>
-                                <option value="3">Other</option>
-
-
+                                                <div class="mb-3">
+                            <label for="cakeWeight" class="form-label">Select Cake Weight:</label>
+                            <select class="form-select" id="cakeWeight" aria-label="Cake Weight Selection" onchange="toggleCustomWeight()">
+                                <option selected disabled>Choose a weight</option>
+                                <option value="0.5">500 gm</option>
+                                <option value="1">1 kg</option>
+                                <option value="1.5">1.5 kg</option>
+                                <option value="2">2 kg</option>
+                                <option value="custom">Custom Weight</option>
                             </select>
                         </div>
+
+                        <div class="mb-3" id="customWeightDiv" style="display: none;">
+                            <label for="customWeight" class="form-label">Enter Custom Weight (kg):</label>
+                            <input type="number" class="form-control" id="customWeight" placeholder="Enter weight in kg" min="0.1" step="0.1">
+                        </div>
+                                                
+                        <script>
+                            function toggleCustomWeight() {
+                                const select = document.getElementById("cakeWeight");
+                                const customWeightDiv = document.getElementById("customWeightDiv");
+                                
+                                if (select.value === "custom") {
+                                    customWeightDiv.style.display = "block";
+                                } else {
+                                    customWeightDiv.style.display = "none";
+                                }
+                            }
+                        </script>
+
                         <!-- Address -->
                         <div class="mb-3">
                             <label for="address" class="form-label">Address :</label>
                             <input type="text" class="form-control" id="address" placeholder="Enter your address">
                         </div>
                         <!-- Price -->
-                      
+                        <div class="mb-3">
+    <label for="phoneNumber" class="form-label">Phone Number:</label>
+    <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" 
+           pattern="[0-9]{10}" maxlength="10" required>
+    <small class="form-text text-muted">Enter a 10-digit phone number.</small>
+</div>
+
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary" style="background-color: #E78E2A;">Book My Cake</button>
                     </form>

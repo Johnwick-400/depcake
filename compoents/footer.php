@@ -7,7 +7,7 @@
                         <a href="index.php" class="navbar-brand">
                             <img src="img/1.png" alt="" width="200px">
                         </a>
-                        <p class="mt-3">Deh Deepya's Cake Factory is your one-stop destination for delicious, handcrafted cakes made with love and premium ingredients. From classic flavors to custom-designed masterpieces, we create cakes that make every occasion special. Whether it's a birthday, wedding, or just a sweet craving, we bake with perfection to bring joy to every bite. 🍰✨</div>
+                        <p class="mt-3">Deh Deepya's Cake Factory is your one-stop destination for delicious, handcrafted cakes made with love and premium ingredients. From classic flavors to custom-designed masterpieces, we create cakes that make every occasion special. Whether it's a birthday, wedding, or just a sweet craving, we bake with perfection to bring joy to every bite. </div>
                 </div>
                 <div class="col-lg-8 col-md-6">
                     <div class="row gx-5">
