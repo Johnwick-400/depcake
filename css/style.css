@@ -277,7 +277,7 @@ h6,
     opacity: 1;
 }
 
-.testimonial-carousel .owl-dots {
+.Reviews-carousel .owl-dots {
     height: 45px;
     margin-top: 30px;
     display: flex;
@@ -285,7 +285,7 @@ h6,
     justify-content: center;
 }
 
-.testimonial-carousel .owl-dot {
+.Reviews-carousel .owl-dot {
     position: relative;
     display: inline-block;
     margin: 0 2px;
@@ -295,17 +295,17 @@ h6,
     transition: .5s;
 }
 
-.testimonial-carousel .owl-dot.active {
+.Reviews-carousel .owl-dot.active {
     height: 45px;
     background: var(--primary);
 }
 
-.testimonial-carousel .owl-item .testimonial-item {
+.Reviews-carousel .owl-item .Reviews-item {
     opacity: .1;
     transition: .5s;
 }
 
-.testimonial-carousel .owl-item.center .testimonial-item {
+.Reviews-carousel .owl-item.center .Reviews-item {
     opacity: 1;
 }
 
