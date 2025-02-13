@@ -87,6 +87,77 @@ function displayCakeList() {
     });
 }
 
+    function bookCake() {
+        // Get the selected cake details
+        let cakeName = document.getElementById("cakeLabel").innerText;
+        let cakeType = document.querySelector('input[name="type"]:checked') ? document.querySelector('input[name="type"]:checked').value : "Not Selected";
+        let cakeWeight = document.getElementById("cakeWeight").value;
+        let customWeight = document.getElementById("customWeight").value;
+        let address = document.getElementById("address").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+
+        // Handle custom weight
+        let finalWeight = (cakeWeight === "custom" && customWeight) ? `${customWeight} kg` : `${cakeWeight} kg`;
+
+        // Validate user inputs
+        if (!cakeName || !cakeType || !finalWeight || !address || !phoneNumber) {
+            alert("Please fill in all the required details.");
+            return;
+        }
+
+        // Format the WhatsApp message
+        let message = `I want to order a cake:
+🍰 *Cake Name*: ${cakeName}
+🥚 *Type*: ${cakeType}
+⚖️ *Weight*: ${finalWeight}
+📍 *Address*: ${address}
+📞 *Phone*: ${phoneNumber}`;
+
+        // Encode message for URL
+        let encodedMessage = encodeURIComponent(message);
+
+        // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
+        window.location.href = `https://wa.me/+919381756195?text=${encodedMessage}`;
+    }
+    function bookCake1() {
+        // Get the selected cake details
+        let cakeName = document.getElementById("cakeLabel").innerText;
+        let cakeType = document.querySelector('input[name="type"]:checked') ? document.querySelector('input[name="type"]:checked').value : "Not Selected";
+        let cakeWeight = document.getElementById("cakeWeight").value;
+        let cakeFlavour = document.getElementById("CakeFlavour").value;
+        let customWeight = document.getElementById("customWeight").value;
+        let address = document.getElementById("address").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+
+        // Handle custom weight
+        let finalWeight = (cakeWeight === "custom" && customWeight) ? `${customWeight} kg` : `${cakeWeight} kg`;
+
+        // Validate user inputs
+        if (!cakeName || !cakeType || !finalWeight || !address || !phoneNumber) {
+            alert("Please fill in all the required details.");
+            return;
+        }
+
+        // Format the WhatsApp message
+        let message = `I want to order a Theme cake:
+🍰 *Cake Name*: ${cakeName}
+🎂 *Flavour*: ${cakeFlavour}
+🥚 *Type*: ${cakeType}
+⚖️ *Weight*: ${finalWeight}
+📍 *Address*: ${address}
+📞 *Phone*: ${phoneNumber}`;
+
+        // Encode message for URL
+        let encodedMessage = encodeURIComponent(message);
+
+        // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
+        window.location.href = `https://wa.me/+919381756195?text=${encodedMessage}`;
+    }
+
+
+
+
+
 window.onload = function () {
     displaySelectedCake();
     displayCakeList();
