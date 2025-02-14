@@ -161,7 +161,7 @@ function displayCakeList() {
         let encodedMessage = encodeURIComponent(message);
 
         // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
-        window.location.href = `https://wa.me/+919381756195?text=${encodedMessage}`;
+        window.location.href = `https://wa.me/+919642453006?text=${encodedMessage}`;
     }
 
 
