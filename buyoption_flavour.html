@@ -141,67 +141,72 @@
                             <input type="number" class="form-control" id="customWeight" placeholder="Enter weight in kg" min="0.1" step="0.1" oninput="updatePrice()">
                         </div>
 
-                          <!-- Description -->
-                          
-                        <script>
+                        <div class="mb-3">
+                            <label class="form-label">Estimated Price:</label>
+                            <p id="cakePrice" style="font-weight: bold; font-size: 18px;">Price will be updated when order details are selected.</p>
+                        </div>
+                          <script>
                             const prices = {
-                                "Butterscotch": [460, 920],
+                                "ButterScotch Cake": [460, 920],
                                 "Chocolate Cake": [420, 840],
-                                "Truffle Chocolate": [490, 980],
-                                "Honey Almond": [430, 860],
-                                "Strawberry": [430, 860],
-                                "Rasmalai": [460, 920],
-                                "White Chocolate": [460, 920],
-                                "Lotus Biscoff": [650, 1300]
+                                "Truffle Chocolate Cake": [490, 980],
+                                "Honey Almond Cake": [430, 860],
+                                "Strawberry Cake": [430, 860],
+                                "Rasmalai Cake": [460, 920],
+                                "White Chocolate Cake": [460, 920],
+                                "Lotusbiscoff Cake": [650, 1300]
                             };
-                    
+                        
                             function toggleCustomWeight() {
                                 const select = document.getElementById("cakeWeight");
                                 const customWeightDiv = document.getElementById("customWeightDiv");
                                 customWeightDiv.style.display = select.value === "custom" ? "block" : "none";
+                                updatePrice();
                             }
-                    
+                        
                             function updatePrice() {
-                                let flavour = document.getElementById("cakeLable").innerText;
+                                let flavour = document.getElementById("cakeLabel").innerText.trim();
                                 let weight = document.getElementById("cakeWeight").value;
                                 let isEggless = document.getElementById("veg").checked;
+                                let isEgg = document.getElementById("nonVeg").checked;
                                 let priceElement = document.getElementById("cakePrice");
-                                
+                        
                                 if (!flavour || !weight) {
-                                    priceElement.innerText = "Price will be updated when the order is confirmed.";
+                                    priceElement.innerText = "Price will be updated when order details are selected.";
                                     return;
                                 }
-                    
+                        
                                 if (!prices[flavour]) {
                                     priceElement.innerText = "Price not available for this flavour.";
                                     return;
                                 }
-                    
-                                let basePrice = prices[flavour][weight == 0.5 ? 0 : 1];
-                                
-                                if (weight === "custom") {
+                        
+                                let weightValue = parseFloat(weight);
+                                let basePrice = 0;
+                        
+                                if (weightValue === 0.5) {
+                                    basePrice = prices[flavour][0];
+                                } else if (weightValue === 1) {
+                                    basePrice = prices[flavour][1];
+                                } else if (weightValue > 1) {
+                                    basePrice = (prices[flavour][1] / 1) * weightValue;
+                                } else if (weight === "custom") {
                                     let customWeight = parseFloat(document.getElementById("customWeight").value);
-                                    if (customWeight > 0) basePrice = (basePrice / (weight == 0.5 ? 0.5 : 1)) * customWeight;
+                                    if (customWeight > 0) basePrice = (prices[flavour][1] / 1) * customWeight;
                                 }
-                    
-                                if (isEggless) basePrice += weight >= 1 ? 100 : 50;
-                    
-                                priceElement.innerText = `₹${basePrice}`;
+                        
+                                let extraCharge = isEggless ? 100 : isEgg ? 50 : 0;
+                                let finalPrice = basePrice + extraCharge;
+                        
+                                priceElement.innerText = `Estimated Price: ₹${finalPrice.toFixed(2)}`;
                             }
+                        
+                            document.getElementById("cakeWeight").addEventListener("change", updatePrice);
+                            document.getElementById("customWeight").addEventListener("input", updatePrice);
+                            document.getElementById("veg").addEventListener("change", updatePrice);
+                            document.getElementById("nonVeg").addEventListener("change", updatePrice);
                         </script>
-                        <script>
-                            
-                            function toggleCustomWeight() {
-                                const select = document.getElementById("cakeWeight");
-                                const customWeightDiv = document.getElementById("customWeightDiv");
-                                
-                                if (select.value === "custom") {
-                                    customWeightDiv.style.display = "block";
-                                } else {
-                                    customWeightDiv.style.display = "none";
-                                }
-                            }
-                        </script>
+                        
 
                         <!-- Address -->
                         <div class="mb-3">
