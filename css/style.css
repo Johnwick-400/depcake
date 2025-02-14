@@ -300,12 +300,12 @@ h6,
     background: var(--primary);
 }
 
-.Reviews-carousel .owl-item .Reviews-item {
+.Reviews-carousel .owl-item .testimonial-item {
     opacity: .1;
     transition: .5s;
 }
 
-.Reviews-carousel .owl-item.center .Reviews-item {
+.Reviews-carousel .owl-item.center .testimonial-item {
     opacity: 1;
 }
 
