@@ -118,15 +118,11 @@
                         <!-- Veg/Non-Veg Options -->
                         <div class="mb-3">
                             <label class="form-label">Type :</label><br>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="type" id="veg" value="Veg">
-                                <label class="form-check-label" for="veg">Egg Less🟢</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="type" id="nonVeg" value="Non-Veg">
-                                <label class="form-check-label" for="nonVeg">Egg🔴</label>
-                            </div>
+                            <input type="radio" name="type" id="veg" value="Veg" onclick="updatePrice()"> Eggless 🟢
+                            <input type="radio" name="type" id="nonVeg" value="Non-Veg" onclick="updatePrice()"> Egg 🔴<br>
+                            <small class="form-text text-muted d-block">Eggless Cake Pricing: 500g + ₹50, 1kg and above + ₹100</small>
                         </div>
+                        
                         <!-- Description -->
                                                 <div class="mb-3">
                             <label for="cakeWeight" class="form-label">Select Cake Weight:</label>
