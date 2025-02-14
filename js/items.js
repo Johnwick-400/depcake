@@ -37,7 +37,18 @@ let itemsList = [
     { "id": 36,"name": "Avengers Cake", "image": "./img/flavours/Avengers.jpg", "type": "theme" },
     { "id": 37,"name": "Baby Shark Cake", "image": "./img/flavours/babyshark.jpg", "type": "theme" },
     { "id": 38,"name": "Panda Cake", "image": "./img/flavours/Panda.jpg", "type": "theme" },
-    { "id": 39,"name": "Couple Cake", "image": "couplecake2.png", "type": "theme" }
+    { "id": 39,"name": "Couple Cake", "image": "couplecake2.png", "type": "theme" },
+    { "id": 40,"name": "Let's Get Married", "image": "img/flavours/Engaged.jpg", "type": "theme" },
+    { "id": 41,"name": "Mr.Bean", "image": "img/flavours/Mr.beanBirth.jpg", "type": "theme" },
+    { "id": 43,"name": "Mega Chocolate", "image": "img/flavours/mixedchoco.jpg", "type": "theme" },
+    { "id": 42,"name": "Birthday Girl", "image": "img/flavours/birthdaygirl.jpg", "type": "theme" },
+    { "id": 44,"name": "Welcome Baby", "image": "img/flavours/welcomebaby.jpg", "type": "theme" },
+    { "id": 45,"name": "Girl's Graduation", "image": "img/flavours/Graduation.jpg", "type": "theme"},
+    { "id": 46,"name": "Bride To Be", "image": "img/flavours/Bridetobe.jpg", "type": "theme"},
+    { "id": 47,"name": "Super Woman", "image": "img/flavours/SuperWomen.jpg", "type": "theme"},
+    { "id": 48,"name": "Mother's Day ", "image": "img/flavours/mothersday2.jpg", "type": "theme"},
+    { "id": 49,"name": "Mother's Day 2", "image": "img/flavours/mothersday.jpg", "type": "theme"}
+        
 ];
 
 
@@ -117,7 +128,7 @@ function displayCakeList() {
         let encodedMessage = encodeURIComponent(message);
 
         // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
-        window.location.href = `https://wa.me/+919381756195?text=${encodedMessage}`;
+        window.location.href = `https://wa.me/+919642453006?text=${encodedMessage}`;
     }
     function bookCake1() {
         // Get the selected cake details
