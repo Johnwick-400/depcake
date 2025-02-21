@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Deh Deepya's Cake Factory</title>
+    <title>DehDeepya's Cake Factory</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -29,23 +29,21 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-       .hero-wrap {
+.hero-wrap {
     position: relative;
     width: 100%;
     height: 80vh;
     overflow: hidden;
 }
 
-/* Slide Styling */
 .slide {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Fixes any unwanted gaps */
+    width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -55,96 +53,47 @@
     z-index: 1;
 }
 
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
 
-        @keyframes slideIn {
-            from {
-                left: 100%;
-            }
-            to {
-                left: 0;
-            }
-        }
+.arrow:hover {
+    transform: scale(1.2);
+}
 
-        @keyframes slideOut {
-            from {
-                left: 0;
-            }
-            to {
-                left: -100%;
-            }
-        }
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
 
-        .content {
-            position: absolute;
-            bottom: 20%;
-            left: 10%;
-            color: #fff;
-            z-index: 2;
-        }
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
 
-        .content h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.5s;
+}
 
-        .content p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+.dot.active { background: white; }
 
-        .content .btn {
-            padding: 10px 20px;
-            text-decoration: none;
-            margin-right: 10px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn-primary {
-            background: #E88F2A;
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: #ffb907;
-            transform: scale(1.1);
-        }
-
-        .btn-white {
-            background: #fff;
-            color: #000;
-        }
-
-        .btn-white:hover {
-            background: #ddd;
-            transform: scale(1.1);
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        .arrow:hover {
-            transform: scale(1.2);
-        }
-
-        .arrow.left {
-            left: 10px;
-        }
-
-        .arrow.right {
-            right: 10px;
-        }
     </style>
 </head>
 
@@ -187,7 +136,7 @@
     <a href="index.html" class="navbar-brand d-block d-lg-none">
         <h3 class="m-0 fs-6 text-white d-flex align-items-center">
             <img src="./img/logo.png" alt="Logo" class="me-2" style="height: 40px;">
-            Deh Deepya's Cake Factory
+            DehDeepya's Cake Factory
         </h3>
     </a>
     
@@ -297,9 +246,9 @@
     }
 </style>
 
-<div class="container-fluid bg-primary hero-header hero-wrap" id="hero-slider">
-    <div class="slide active" style="background-image: url('homepage20.jpg');"></div>
-    <div class="slide" style="background-image: url('homepage.jpg');"></div>
+<div class="container-fluid hero-wrap" id="hero-slider">
+    <div class="slide active" style="background-image: url('img/homepage20.jpg');"></div>
+    <div class="slide" style="background-image: url('img/homepage.jpg');"></div>
     <div class="slide" style="background-image: url('img/depcake3.jpg');"></div>
 
     <!-- Navigation Arrows -->
@@ -309,6 +258,7 @@
     <!-- Dots -->
     <div class="dots"></div>
 </div>
+
 
 <script>
     let currentSlide = 0;
@@ -349,11 +299,7 @@
     let startX = 0;
     document.getElementById("hero-slider").addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
     document.getElementById("hero-slider").addEventListener("touchend", (e) => {
-        let endX = e.changedTouches[0].clientX;
-        if (startX > endX + 50) changeSlide(1);
-        if (startX < endX - 50) changeSlide(-1);
-    });
-
+        
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") changeSlide(-1);
@@ -370,7 +316,7 @@
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h2 class="text-primary font-secondary">About Us</h2>
-                <h1 class="display-4 ">Welcome To Deh Deepya's <br/> Cake Factory</h1>
+                <h1 class="display-4 ">Welcome To DehDeepya's <br/> Cake Factory</h1>
             </div>
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
@@ -392,11 +338,11 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
-                                <i class="fa fa-award fa-2x text-white"></i>
+                                <img src="https://th.bing.com/th/id/OIP.Qe7_imZDKxYO_mBngTd4HAHaDk?rs=1&pid=ImgDetMain" style="width: 90px; height: 90px;" alt="">
                             </div>
-                            <h4 class="text-uppercase">Award Winning</h4>
-                            <p class="mb-0">Recognized for our unique designs and exceptional taste, we bring perfection to every bite.</p>
-                        </div>
+                            <h4 class="text-uppercase">FSSAI Approved</h4>
+                            <p class="mb-0">Certified for maintaining top-tier hygiene standards and exceptional food quality.</p>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -818,7 +764,7 @@
                         <div class="d-flex mt-4">
                             <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
                             <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                            <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="https://www.instagram.com/dehdeepyas_cakefactory/ "><i class="fab fa-instagram fw-normal"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -833,14 +779,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
-                        <p>Stay updated with our latest offers, new cake designs, and exclusive discounts.</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-primary">Join Now</button>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Fssai</h4>
+                            <p>Reg No: 20123052000769</p>
+                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
+                                <img src="https://th.bing.com/th/id/OIP.Qe7_imZDKxYO_mBngTd4HAHaDk?rs=1&pid=ImgDetMain" style="width: 90px; height: 90px;" alt="">
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
