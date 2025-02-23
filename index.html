@@ -188,15 +188,12 @@
     .arrow {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         font-size: 2rem;
         color: white;
         cursor: pointer;
         padding: 10px;
         background: rgba(0, 0, 0, 0.4);
         border-radius: 50%;
-        user-select: none;
-        transition: background 0.3s;
     }
 
     .arrow:hover {
@@ -216,7 +213,6 @@
         position: absolute;
         bottom: 15px;
         left: 50%;
-        transform: translateX(-50%);
         display: flex;
     }
 
@@ -227,7 +223,6 @@
         background: rgba(255, 255, 255, 0.5);
         border-radius: 50%;
         cursor: pointer;
-        transition: background 0.5s;
     }
 
     .dot.active {
@@ -247,9 +242,9 @@
 </style>
 
 <div class="container-fluid hero-wrap" id="hero-slider">
-    <div class="slide active" style="background-image: url('img/homepage20.jpg');"></div>
-    <div class="slide" style="background-image: url('img/homepage.jpg');"></div>
-    <div class="slide" style="background-image: url('img/depcake3.jpg');"></div>
+    <div class="slide active" style="background-image: url('img/homepage.jpg');"></div>
+    <div class="slide" style="background-image: url('img/homepage_banner2.jpg');"></div>
+    <div class="slide" style="background-image: url('./cheeseCake.jpg');"></div>
 
     <!-- Navigation Arrows -->
     <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
@@ -289,16 +284,12 @@
     }
 
     // Auto-slide every 5 seconds
-    let slideInterval = setInterval(() => changeSlide(1), 5000);
+    let slideInterval = setInterval(() => changeSlide(1), 5);
 
     // Pause auto-slide on hover
     document.getElementById("hero-slider").addEventListener("mouseenter", () => clearInterval(slideInterval));
-    document.getElementById("hero-slider").addEventListener("mouseleave", () => slideInterval = setInterval(() => changeSlide(1), 5000));
+    document.getElementById("hero-slider").addEventListener("mouseleave", () => slideInterval = setInterval(() => changeSlide(1), 5));
 
-    // Swipe support for mobile users
-    let startX = 0;
-    document.getElementById("hero-slider").addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
-    document.getElementById("hero-slider").addEventListener("touchend", (e) => {
         
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
