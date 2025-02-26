@@ -47,7 +47,11 @@ let itemsList = [
     { "id": 47,"name": "Super Woman", "image": "img/flavours/SuperWomen.jpg", "type": "theme"},
     { "id": 48,"name": "Mother's Day ", "image": "img/flavours/mothersday2.jpg", "type": "theme"},
     { "id": 49,"name": "Mother's Day 2", "image": "img/flavours/mothersday.jpg", "type": "theme"},
-    { "id": 50,"name": "AnniversaryCake", "image": "img/flavours/Anniversary.jpg", "type": "theme"}
+    { "id": 50,"name": "BlackForest cake", "image": "img/flavours/Anniversary.jpg", "type": "flavour"},
+    { "id": 51,"name": "Vanilla Cake", "image": "img/flavours/Anniversary.jpg", "type": "flavour"},
+    { "id": 52,"name": "Chocochip Cake", "image": "img/flavours/Anniversary.jpg", "type": "flavour"},
+    { "id": 53,"name": "Redvelvet Cake", "image": "img/flavours/Anniversary.jpg", "type": "flavour"}
+   
         
 ];
 
