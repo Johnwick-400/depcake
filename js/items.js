@@ -132,7 +132,7 @@ function displayCakeList() {
         let encodedMessage = encodeURIComponent(message);
 
         // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
-        window.location.href = `https://wa.me/+919642453006?text=${encodedMessage}`;
+        window.location.href = `https://wa.me/+916302268588?text=${encodedMessage}`;
     }
     function bookCake1() {
         // Get the selected cake details
@@ -166,7 +166,7 @@ function displayCakeList() {
         let encodedMessage = encodeURIComponent(message);
 
         // Redirect to WhatsApp (Replace XXXXXXXXXX with your WhatsApp number)
-        window.location.href = `https://wa.me/+919642453006?text=${encodedMessage}`;
+        window.location.href = `https://wa.me/+916302268588?text=${encodedMessage}`;
     }
 
 
