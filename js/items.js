@@ -1,7 +1,7 @@
 let itemsList = [
     { "id": 2,"name": "Chocolate Cake", "image": "./img/flavours/CHOCO.jpg", "type": "flavour" },
     { "id": 1,"name": "ButterScotch Cake", "image": "./img/flavours/butterscotch.jpg", "type": "flavour" },
-    { "id": 3,"name": "Truffle Chocolate Cake", "image": "./img/flavours/Depadya Cake.svg", "type": "flavour" },
+    { "id": 3,"name": "Truffle Chocolate Cake", "image": "./img/flavours/Depadya Cake (3).jpg", "type": "flavour" },
     { "id": 4,"name": "Honey Almond Cake", "image": "./img/flavours/HONEY.jpg", "type": "flavour" },
     { "id": 5,"name": "Strawberry Cake", "image": "./img/flavours/straw.jpg", "type": "flavour" },
     { "id": 6,"name": "Rasmalai Cake", "image": "./img/flavours/rasamalai.jpg", "type": "flavour" },
