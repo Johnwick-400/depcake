@@ -29,6 +29,39 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <script src="./js/items.js"></script>
+
+    <!-- Add this in the head section, after your existing styles -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-float i {
+            margin-top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -123,7 +156,7 @@
                             <label class="form-label">Type :</label><br>
                             <input type="radio" name="type" id="veg" value="Veg" onclick="updatePrice()"> Eggless 🟢
                             <input type="radio" name="type" id="nonVeg" value="Non-Veg" onclick="updatePrice()"> Egg 🔴<br>
-                            <small class="form-text text-muted d-block">Eggless Cake Pricing: 500g + ₹50, 1kg and above + ₹100</small>
+                            <small class="form-text text-muted d-block"></small>
                         </div>
                         
                         <!-- Description -->
@@ -132,7 +165,6 @@
                             <select class="form-select" id="cakeWeight" aria-label="Cake Weight Selection" onchange="toggleCustomWeight()">
                                 <option selected disabled>Choose a weight</option>
                                 <option value="1">1 kg</option>
-                                <option value="1.5">1.5 kg</option>
                                 <option value="2">2 kg</option>
                                 <option value="custom">Custom Weight</option>
                             </select>
@@ -204,6 +236,10 @@
         };
     </script>
 
+    <!-- Add this just before the closing body tag -->
+<a href="https://wa.me/916302268588" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 </body>
 
 </html>
