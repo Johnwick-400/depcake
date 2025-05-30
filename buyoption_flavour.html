@@ -155,7 +155,7 @@
                             <label class="form-label">Type :</label><br>
                             <input type="radio" name="type" id="veg" value="Veg" onclick="updatePrice()"> Eggless 🟢
                             <input type="radio" name="type" id="nonVeg" value="Non-Veg" onclick="updatePrice()"> Egg 🔴<br>
-                            <small class="form-text text-muted d-block">Eggless Cake Pricing: 500g + ₹50, 1kg and above + ₹100</small>
+                            <small class="form-text text-muted d-block">Additional Cake ₹50 For Eggless Cakes</small>
                         </div>
 
                         <!-- Description -->
@@ -182,7 +182,7 @@
                         </div>
                         <script>
                             const prices = {
-                                "ButterScotch Cake": [460, 920],
+                                "ButterScotch Cake": [430, 860],
                                 "Chocolate Cake": [420, 840],
                                 "Truffle Chocolate Cake": [490, 980],
                                 "Honey Almond Cake": [430, 860],
@@ -232,7 +232,7 @@
                                     basePrice = prices[flavour][1];
                                 }
 
-                                let extraCharge = isEggless ? (weightValue === 0.5 ? 50 : 100) : 0;
+                                let extraCharge = isEggless ? (weightValue === 0.5 ? 50 : 50) : 0;
                                 let finalPrice = basePrice + extraCharge;
 
                                 priceElement.innerText = `Estimated Price: ₹${finalPrice.toFixed(2)}`;
